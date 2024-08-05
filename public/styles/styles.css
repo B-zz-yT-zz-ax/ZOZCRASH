@@ -1,0 +1,220 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+  color: #e0e0e0;
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 50px auto;
+  overflow: hidden;
+  padding: 20px;
+  background: #2c2c2c;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+h2, h3 {
+  color: #bb86fc;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+nav ul {
+  padding: 0;
+  list-style: none;
+  background: #333;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
+  border-radius: 8px;
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #e0e0e0;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+  background: #bb86fc;
+  color: #1a1a1a;
+}
+
+.inputBox {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 10px;
+  background: #333;
+  border: 1px solid #555;
+  outline: none;
+  border-radius: 4px;
+  color: #e0e0e0;
+}
+
+.inputBox label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #aaa;
+  transition: 0.5s;
+}
+
+.inputBox input:focus ~ label,
+.inputBox input:valid ~ label {
+  top: -20px;
+  left: 10px;
+  color: #bb86fc;
+  font-size: 12px;
+}
+
+button {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 20px;
+  background: #bb86fc;
+  color: #1a1a1a;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+
+button:hover {
+  background: #e0e0e0;
+  color: #1a1a1a;
+}
+
+#card-element {
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  background: #333;
+  color: #e0e0e0;
+}
+
+#error-message {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Login Page Styles */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #2c2c2c;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.login-container h2 {
+  color: #bb86fc;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-container .inputBox {
+  margin-bottom: 20px;
+}
+
+.login-container .inputBox input {
+  width: 100%;
+  padding: 10px;
+  background: #333;
+  border: 1px solid #555;
+  outline: none;
+  border-radius: 4px;
+  color: #e0e0e0;
+}
+
+.login-container .inputBox label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #aaa;
+  transition: 0.5s;
+}
+
+.login-container .inputBox input:focus ~ label,
+.login-container .inputBox input:valid ~ label {
+  top: -20px;
+  left: 10px;
+  color: #bb86fc;
+  font-size: 12px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px 20px;
+  background: #bb86fc;
+  color: #1a1a1a;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.login-container button:hover {
+  background: #e0e0e0;
+  color: #1a1a1a;
+}
+
+.login-container .links {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-container .links a {
+  color: #bb86fc;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.login-container .links a:hover {
+  color: #e0e0e0;
+}
+
+.game-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.game-card img {
+  width: 100px;
+  height: 100px;
+}
+

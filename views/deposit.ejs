@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deposit</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Deposit Funds</h2>
+    <form action="/deposit" method="POST" id="payment-form">
+      <div class="inputBox">
+        <input type="number" name="amount" required>
+        <label>Amount</label>
+      </div>
+      <div id="card-element"></div>
+      <button type="submit">Deposit</button>
+      <div id="error-message"></div>
+    </form>
+  </div>
+  <script>
+    const stripe = Stripe('<%= publishableKey %>');
+    const elements = stripe.elements();
+    const card = elements.create('card');
+    card.mount('#card-element');
+
+    const form = document.getElementById('payment-form');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const { token, error } = await stripe.createToken(card);
+      if (error) {
+        document.getElementById('error-message').textContent = error.message;
+      } else {
+        const hiddenInput = document.createElement('input');
+        hiddenInput.setAttribute('type', 'hidden');
+        hiddenInput.setAttribute('name', 'stripeToken');
+        hiddenInput.setAttribute('value', token.id);
+        form.appendChild(hiddenInput);
+        form.submit();
+      }
+    });
+  </script>
+</body>
+</html>
